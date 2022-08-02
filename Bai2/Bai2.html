@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    let insertNumberToArray=newArray();
+    let x = +prompt("Nhập vào số nguyên x:");
+    let index = parseInt(prompt("Nhập vào vị trí index: "));
+    let showArray = ShowArray(insertNumberToArray,x,index)
+    document.write("Mảng là: " + showArray)
+    function newArray() {
+        let Length = +prompt("Nhập số lượng phần tử trong mảng");
+        let insertNumberToArray = new Array(length);
+        for (let i = 0; i < Length; i++) {
+            insertNumberToArray[i] = parseInt(prompt("Nhập giá trị của phần tử " + i + ":"));
+        }
+        return insertNumberToArray;
+    }
+
+    function checkIndex(array,index) {
+        if (index < 0 || index > array.length) {
+            return false;
+        }
+        else {
+            return true
+        }
+    }
+    function ShowArray(array,x,index){
+        let changeArray = new Array();
+        if (checkIndex(array,index)) {
+            for (let i = array.length; i > index;i--) {
+                array[i] = array[i-1];
+            }
+            array[index] = x;
+            changeArray = array
+        }
+        else {
+            changeArray = array
+        }
+        return changeArray
+    }
+
+</script>
