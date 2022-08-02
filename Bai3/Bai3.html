@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tím số nguyên tố </title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let number = +prompt("Nhập vào số nguyên x: ")
+    let primeArray = newARRay(number);
+    let sumprime = 0;
+    for (let i = 0; i < primeArray.length; i++) {
+        sumprime = sumprime + primeArray[i];
+    }
+    document.write("Tổng các số nguyên đến " + number + " là: "+ sumprime)
+  function checkPrime(number) {
+    if (number < 2)
+      return false;
+    for (let i = 2;i <=Math.sqrt(number);i++) {
+      if (number%i === 0){
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function newARRay(number) {
+    let primeArray = new Array();
+    for (let i=0; i <= number ; i++ ) {
+        if (checkPrime(i)) {
+            primeArray.push(i)
+        }
+    }
+    return primeArray;
+  }
+
+
+</script>
